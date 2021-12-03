@@ -9,4 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "Moviees"
 include ':app'
 include ':core'
-include ':feature:tvshows'
+include ':features:tvshows'
