@@ -60,6 +60,10 @@ dependencies {
     implementation(Dependencies.AndroidX.lifecycle)
     implementation(Dependencies.AndroidX.viewmodel)
 
+    //Android Navigation
+    implementation (Dependencies.AndroidX.navigation)
+    implementation (Dependencies.AndroidX.navigationUI)
+
     //Dependency Injection
     implementation(Dependencies.DI.koin)
     implementation(Dependencies.DI.koinAndroid)

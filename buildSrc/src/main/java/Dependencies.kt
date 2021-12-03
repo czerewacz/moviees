@@ -23,6 +23,10 @@ object Dependencies {
             "androidx.lifecycle:lifecycle-runtime-ktx:${DependenciesVersions.lifecycle}"
         //Android lifecycle viewmodel
         const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${DependenciesVersions.lifecycle}"
+        //Navigation
+        const val navigation = "androidx.navigation:navigation-fragment-ktx:${DependenciesVersions.navigation}"
+        //Navigation ui
+        const val navigationUI = "androidx.navigation:navigation-ui-ktx:${DependenciesVersions.navigation}"
     }
 
     object Kotlin{
