@@ -5,6 +5,8 @@ object Dependencies {
         const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${DependenciesVersions.kotlin}"
         // Gradle Build Tools plugin
         const val gradle = "com.android.tools.build:gradle:${DependenciesVersions.gradle}"
+        // Gradle Build Tools plugin
+        const val navigation = "androidx.navigation:navigation-safe-args-gradle-plugin:${DependenciesVersions.navigation}"
     }
 
     object AndroidX {
@@ -23,6 +25,10 @@ object Dependencies {
             "androidx.lifecycle:lifecycle-runtime-ktx:${DependenciesVersions.lifecycle}"
         //Android lifecycle viewmodel
         const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${DependenciesVersions.lifecycle}"
+        //Navigation
+        const val navigation = "androidx.navigation:navigation-fragment-ktx:${DependenciesVersions.navigation}"
+        //Navigation ui
+        const val navigationUI = "androidx.navigation:navigation-ui-ktx:${DependenciesVersions.navigation}"
     }
 
     object Kotlin{

@@ -1,6 +1,7 @@
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
     id(BuildPlugins.KOTLIN_ANDROID)
+    id(BuildPlugins.SAFEARGS)
 }
 
 android {
@@ -59,6 +60,10 @@ dependencies {
     //Android Lifecycle
     implementation(Dependencies.AndroidX.lifecycle)
     implementation(Dependencies.AndroidX.viewmodel)
+
+    //Android Navigation
+    implementation (Dependencies.AndroidX.navigation)
+    implementation (Dependencies.AndroidX.navigationUI)
 
     //Dependency Injection
     implementation(Dependencies.DI.koin)
