@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Moviees</string>
+    <string name="votes">Votes:</string>
     <string name="error_txt">Something went wrong</string>
 </resources>

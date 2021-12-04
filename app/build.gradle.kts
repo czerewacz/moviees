@@ -1,7 +1,10 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
     id(BuildPlugins.KOTLIN_ANDROID)
     id(BuildPlugins.SAFEARGS)
+    id(BuildPlugins.KOTLIN_KAPT)
 }
 
 android {
@@ -68,5 +71,9 @@ dependencies {
     //Dependency Injection
     implementation(Dependencies.DI.koin)
     implementation(Dependencies.DI.koinAndroid)
+
+    //Glide
+    implementation(Dependencies.Glide.glide)
+    kapt(Dependencies.Glide.glideKapt)
 
 }

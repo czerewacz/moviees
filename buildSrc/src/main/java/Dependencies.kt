@@ -61,4 +61,9 @@ object Dependencies {
         const val slf4j = "org.slf4j:slf4j-simple:${DependenciesVersions.slf4j}"
     }
 
+    object Glide {
+        const val glide = "com.github.bumptech.glide:glide:${DependenciesVersions.glide}"
+        const val glideKapt = "com.github.bumptech.glide:compiler:${DependenciesVersions.glide}"
+    }
+
 }

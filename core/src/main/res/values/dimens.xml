@@ -13,6 +13,7 @@
     <dimen name="margin_180">180dp</dimen>
 
     <!-- Sizes -->
+    <dimen name="dimen_20">20dp</dimen>
     <dimen name="dimen_24">24dp</dimen>
     <dimen name="dimen_48">48dp</dimen>
 
