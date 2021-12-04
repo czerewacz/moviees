@@ -3,6 +3,7 @@ package ai.akun.moviees.commons
 import ai.akun.core.di.coreModule
 import ai.akun.core.network.di.networkModule
 import ai.akun.moviees.BuildConfig
+import ai.akun.moviees.feature.tvshows.di.tvShowsModule
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -20,7 +21,8 @@ class MovieeApp : Application() {
             modules(
                 listOf(
                     coreModule,
-                    networkModule
+                    networkModule,
+                    tvShowsModule
                 )
             )
         }

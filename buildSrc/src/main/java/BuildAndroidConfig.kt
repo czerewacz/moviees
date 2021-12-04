@@ -3,7 +3,7 @@
  */
 
 object BuildAndroidConfig {
-    const val APPLICATION_ID = "ai.akun.weatherme"
+    const val APPLICATION_ID = "ai.akun.moviee"
 
     const val COMPILE_SDK= 31
     const val MIN_SDK = 26

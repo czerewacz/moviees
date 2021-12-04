@@ -1,5 +1,6 @@
 package ai.akun.core.network.clients
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
@@ -7,6 +8,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 class ErrorResponse(
-    val code: String?= "400",
-    val message: String = ""
+    @SerialName ("status_code") val code: String?= "400",
+    @SerialName ("status_message") val message: String = ""
 )
