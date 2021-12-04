@@ -1,6 +1,7 @@
 package ai.akun.moviees.commons
 
 import ai.akun.core.di.coreModule
+import ai.akun.core.network.di.networkModule
 import ai.akun.moviees.BuildConfig
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
@@ -18,7 +19,8 @@ class MovieeApp : Application() {
             androidContext(this@MovieeApp)
             modules(
                 listOf(
-                    coreModule
+                    coreModule,
+                    networkModule
                 )
             )
         }
