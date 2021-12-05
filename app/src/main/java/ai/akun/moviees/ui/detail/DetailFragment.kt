@@ -6,15 +6,15 @@ import ai.akun.moviees.commons.loadUrl
 import ai.akun.moviees.databinding.FragmentDetailBinding
 import ai.akun.moviees.feature.tvshows.domain.model.TvShow
 import ai.akun.moviees.feature.tvshows.presentation.DetailViewModel
-import ai.akun.moviees.ui.home.TvShowsAdapter
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class DetailFragment : Fragment() {
 
@@ -22,7 +22,7 @@ class DetailFragment : Fragment() {
     private lateinit var adapter: TvSimilarAdapter
     private val args: DetailFragmentArgs by navArgs()
 
-    private val viewModel: DetailViewModel by viewModel()
+    private val viewModel: DetailViewModel by sharedViewModel()
     //TODO pass args to ViewModel
 
     override fun onCreateView(
@@ -31,14 +31,16 @@ class DetailFragment : Fragment() {
     ): View {
         binding = FragmentDetailBinding.inflate(inflater, container, false)
 
+        viewModel.setTvShow(args.tvShow)
         viewModel.getSimilarTvShows(args.tvShow.genreIds.first())
-        adapter = TvSimilarAdapter(::navigateToSimilar)
+
+        adapter = TvSimilarAdapter(::navigateToSwipe)
         binding.recycler.adapter = adapter
         startObserving()
+
         updateDetailLayout(args.tvShow)
         return binding.root
     }
-
 
     private fun startObserving() {
 
@@ -83,8 +85,9 @@ class DetailFragment : Fragment() {
         else binding.errorText.gone()
     }
 
-    private fun navigateToSimilar(tvShow: TvShow) {
-
+    private fun navigateToSwipe(position: Int) {
+        val action = DetailFragmentDirections.actionDetailFragmentToSwipeFragment(position)
+        findNavController().navigate(action)
     }
 
 }

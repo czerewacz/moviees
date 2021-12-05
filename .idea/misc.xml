@@ -4,14 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../../layout/custom_preview.xml" value="0.2351851851851852" />
+        <entry key="app/src/main/res/drawable/rounded_bg.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2791666666666667" />
+        <entry key="app/src/main/res/layout/fragment_similar.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_swipe.xml" value="0.33" />
         <entry key="app/src/main/res/layout/layout_detail.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/layout_similar_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/view_movie.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/layout/view_similar.xml" value="0.2390625" />
+        <entry key="app/src/main/res/layout/view_swipe.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/view_tv_show.xml" value="0.33" />
       </map>
     </option>

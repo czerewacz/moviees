@@ -27,22 +27,13 @@ class DetailViewModel(
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
 
-    init {
-        state.get<TvShow>("tvShow")?.let { setTvShow(it) }
-    }
-
-
-    private fun setTvShow(tvShow: TvShow) {
-        _tvShow.postValue(tvShow)
-    }
-
     fun getSimilarTvShows(genreId: Int) {
         viewModelScope.launch {
             _uiState.postValue(UIState.Loading)
             getSimilarTVUseCase(genreId = genreId).collect { result ->
                 if (result is UseCaseResult.Success) {
                     _uiState.postValue(UIState.Success)
-                    _topRated.postValue(result.data)
+                    _topRated.postValue(updateTvList(result.data))
                 } else if (result is UseCaseResult.Error) {
                     _uiState.postValue(UIState.Error)
                     _error.postValue(result.exception.message)
@@ -51,6 +42,20 @@ class DetailViewModel(
         }
     }
 
+    fun setTvShow(tvShow: TvShow){
+        _tvShow.postValue(tvShow)
+    }
+
+
+
+    private fun updateTvList(topRated: TopRatedTvShows): TopRatedTvShows {
+        val list: MutableList<TvShow> = topRated.results.toMutableList()
+        list.add(0, tvShow.value!!)
+        return when (topRated.page) {
+            1 -> topRated.copy(results = list.toList())
+            else -> topRated
+        }
+    }
 
     sealed class UIState {
         object Loading : UIState()

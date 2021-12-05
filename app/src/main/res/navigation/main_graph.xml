@@ -31,5 +31,17 @@
         <argument
             android:name="tvShow"
             app:argType="ai.akun.moviees.feature.tvshows.domain.model.TvShow" />
+        <action
+            android:id="@+id/action_detailFragment_to_swipeFragment"
+            app:destination="@id/swipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/swipeFragment"
+        android:name="ai.akun.moviees.ui.similar.SwipeFragment"
+        android:label="fragment_similar"
+        tools:layout="@layout/fragment_swipe" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
     </fragment>
 </navigation>
