@@ -1,5 +1,9 @@
 package ai.akun.moviees.feature.tvshows.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class TvShow(
     val backdropPath: String?,
     val firstAirDate: String,
@@ -14,4 +18,4 @@ data class TvShow(
     val posterPath: String?,
     val voteAverage: Double,
     val voteCount: Int
-)
+) : Parcelable

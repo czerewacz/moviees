@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
@@ -47,8 +48,6 @@ class HomeFragment : Fragment() {
                 binding.errorText.text = error
             }
         })
-
-
     }
 
     private fun updateUi(uiState: TopRatedViewModel.UIState) {
@@ -63,6 +62,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun navigateToTvShow(tvShow: TvShow) {
-
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(tvShow)
+        findNavController().navigate(action)
     }
 }

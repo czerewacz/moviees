@@ -5,6 +5,8 @@ plugins {
     id(BuildPlugins.KOTLIN_ANDROID)
     id(BuildPlugins.SAFEARGS)
     id(BuildPlugins.KOTLIN_KAPT)
+    id(BuildPlugins.KOTLIN_PARCELIZE)
+
 }
 
 android {

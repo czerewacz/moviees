@@ -3,6 +3,7 @@ import extensions.addTestsDependencies
 plugins {
     id(BuildPlugins.ANDROID_LIBRARY)
     id(BuildPlugins.KOTLIN_ANDROID)
+    id(BuildPlugins.KOTLIN_PARCELIZE)
 }
 
 android {

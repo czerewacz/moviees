@@ -18,5 +18,18 @@
         android:id="@+id/homeFragment"
         android:name="ai.akun.moviees.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="ai.akun.moviees.ui.detail.DetailFragment"
+        android:label="layout_detail"
+        tools:layout="@layout/layout_detail" >
+        <argument
+            android:name="tvShow"
+            app:argType="ai.akun.moviees.feature.tvshows.domain.model.TvShow" />
+    </fragment>
 </navigation>
