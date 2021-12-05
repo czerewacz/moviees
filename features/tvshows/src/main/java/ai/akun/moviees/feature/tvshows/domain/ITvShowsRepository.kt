@@ -6,6 +6,8 @@ import kotlinx.coroutines.flow.Flow
 
 interface ITvShowsRepository {
 
-    suspend fun getTopRatedTvShows() : Flow<TopRatedTvShows>
+    suspend fun getTopRatedTvShows(): Flow<TopRatedTvShows>
+
+    suspend fun getSimilarTvShows(genreId: Int): Flow<TopRatedTvShows>
 
 }

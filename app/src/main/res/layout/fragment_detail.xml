@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
     tools:context=".ui.detail.DetailFragment">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -41,13 +40,14 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginBottom="@dimen/margin_40"
             android:transitionGroup="true">
 
             <TextView
@@ -63,7 +63,8 @@
                 android:id="@+id/tvShowDetailInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/lightBackground"
+                android:background="@color/PrimaryDarkColor"
+                android:textColor="@color/white"
                 android:lineSpacingMultiplier="1.5"
                 android:padding="16dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -72,24 +73,29 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
                 android:text="@string/similar_title"
+                android:textColor="@color/black"
                 android:textSize="@dimen/text_24"
-                android:textStyle="bold"
-                android:padding="@dimen/margin_10" />
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/view_tv_show" />
 
             <ProgressBar
                 android:id="@+id/progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/margin_20"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -100,6 +106,7 @@
                 android:id="@+id/errorText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/margin_40"
                 android:layout_marginStart="@dimen/margin_40"
                 android:layout_marginEnd="@dimen/margin_40"
                 android:gravity="center_horizontal"

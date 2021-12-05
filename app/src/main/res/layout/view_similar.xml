@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="2dp">
+
+    <ai.akun.core.customviews.AspectRatioImageView
+        android:id="@+id/tvShowCover"
+        android:layout_width="@dimen/dimen_150"
+        android:layout_height="@dimen/dimen_300"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scaleType="fitCenter"
+        app:ratio="1.5"
+        tools:src="@tools:sample/backgrounds/scenic" />
+</RelativeLayout>

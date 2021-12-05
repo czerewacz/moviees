@@ -16,6 +16,8 @@
     <dimen name="dimen_20">20dp</dimen>
     <dimen name="dimen_24">24dp</dimen>
     <dimen name="dimen_48">48dp</dimen>
+    <dimen name="dimen_150">150dp</dimen>
+    <dimen name="dimen_300">300dp</dimen>
 
     <!-- Text Sizes -->
     <dimen name="text_12">16sp</dimen>

@@ -39,7 +39,28 @@ class MovieDbApiClient(
         }
     }
 
-    fun getSimilarTvShows() {
-
+    fun getSimilarTvShows(
+        genreId: Int
+    ): Flow<TopRatedData> {
+        return flow<TopRatedData> {
+            emit(httpClient.get(
+                scheme = "https",
+                host = baseUrl,
+                port = 443,
+                path = String.format(similarTvEndpoint, genreId)
+            ) {
+                parameter("api_key", apiKey)
+            })
+        }.flowOn(
+            backgroundDispatcher
+        ).retry(retries = 3) { error ->
+            if (error is NetworkFailure.Redirect) {
+                val seconds = (2000).toLong()
+                delay(seconds)
+                return@retry true
+            } else {
+                return@retry false
+            }
+        }
     }
 }

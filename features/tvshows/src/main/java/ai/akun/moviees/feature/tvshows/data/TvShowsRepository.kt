@@ -15,4 +15,10 @@ class TvShowsRepository(
             response.toTopRatedTvShows()
         }
     }
+
+    override suspend fun getSimilarTvShows(genreId: Int): Flow<TopRatedTvShows> {
+        return apiClient.getSimilarTvShows(genreId = genreId).map { response ->
+            response.toTopRatedTvShows()
+        }
+    }
 }

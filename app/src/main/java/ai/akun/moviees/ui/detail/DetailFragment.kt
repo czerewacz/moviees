@@ -1,5 +1,7 @@
 package ai.akun.moviees.ui.detail
 
+import ai.akun.core.extensions.gone
+import ai.akun.core.extensions.visible
 import ai.akun.moviees.commons.loadUrl
 import ai.akun.moviees.databinding.FragmentDetailBinding
 import ai.akun.moviees.feature.tvshows.domain.model.TvShow
@@ -12,13 +14,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import org.koin.androidx.viewmodel.ext.android.stateViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
-    private lateinit var adapter: TvShowsAdapter
+    private lateinit var adapter: TvSimilarAdapter
     private val args: DetailFragmentArgs by navArgs()
 
     private val viewModel: DetailViewModel by viewModel()
@@ -30,27 +31,37 @@ class DetailFragment : Fragment() {
     ): View {
         binding = FragmentDetailBinding.inflate(inflater, container, false)
 
-        viewModel.getSimilarTvShows()
-
+        viewModel.getSimilarTvShows(args.tvShow.genreIds.first())
+        adapter = TvSimilarAdapter(::navigateToSimilar)
+        binding.recycler.adapter = adapter
         startObserving()
-        updateLayoutDetail(args.tvShow)
-
+        updateDetailLayout(args.tvShow)
         return binding.root
-
     }
 
 
     private fun startObserving() {
-        viewModel.tvShow.observe(viewLifecycleOwner, { tvShow ->
-            updateLayoutDetail(tvShow)
+
+        viewModel.uiState.observe(viewLifecycleOwner, { uiState ->
+            updateSimilarLayout(uiState)
         })
 
-        viewModel.data.observe(viewLifecycleOwner, { tvShow ->
-            updateLayoutDetail(tvShow)
+        viewModel.tvShow.observe(viewLifecycleOwner, { tvShow ->
+            updateDetailLayout(tvShow)
+        })
+
+        viewModel.topRated.observe(viewLifecycleOwner, { topRated ->
+            adapter.tvShows = topRated.results
+        })
+
+        viewModel.error.observe(viewLifecycleOwner, { error ->
+            if (error != "") {
+                binding.errorText.text = error
+            }
         })
     }
 
-    private fun updateLayoutDetail(tvShow: TvShow) = with(binding) {
+    private fun updateDetailLayout(tvShow: TvShow) = with(binding) {
         collapsingLayout.apply {
             setExpandedTitleColor(Color.WHITE)
             setCollapsedTitleTextColor(Color.WHITE)
@@ -61,5 +72,19 @@ class DetailFragment : Fragment() {
         tvShowDetailInfo.setTvShow(tvShow)
     }
 
+    private fun updateSimilarLayout(uiState: DetailViewModel.UIState) {
+        if (uiState == DetailViewModel.UIState.Loading) binding.progress.visible()
+        else binding.progress.gone()
+
+        if (uiState == DetailViewModel.UIState.Success) binding.recycler.visible()
+        else binding.recycler.gone()
+
+        if (uiState == DetailViewModel.UIState.Error) binding.errorText.visible()
+        else binding.errorText.gone()
+    }
+
+    private fun navigateToSimilar(tvShow: TvShow) {
+
+    }
 
 }
