@@ -79,6 +79,7 @@ Thumbs.db
 # NDK
 .externalNativeBuild
 .cxxd
+core/src/main/cpp/api-keys.cpp
 
 # Large media files
 *.mp4

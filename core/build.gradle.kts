@@ -27,12 +27,12 @@ android {
         }
     }
 
-    /*
+
     externalNativeBuild {
         cmake {
             path = file("CMakeLists.txt")
         }
-    }*/
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
