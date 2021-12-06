@@ -10,8 +10,8 @@ import kotlinx.coroutines.flow.map
 class GetTopRatedUseCase(
     private val tvShowsRepository: ITvShowsRepository
 ) {
-    suspend operator fun invoke(): Flow<UseCaseResult<TopRatedTvShows>> {
-        return tvShowsRepository.getTopRatedTvShows().map { topRatedTvShows ->
+    suspend operator fun invoke(page: Int): Flow<UseCaseResult<TopRatedTvShows>> {
+        return tvShowsRepository.getTopRatedTvShows(page = page).map { topRatedTvShows ->
             UseCaseResult.Success(topRatedTvShows) as UseCaseResult<TopRatedTvShows>
         }.catch { error ->
             emit(UseCaseResult.Error(exception = error))

@@ -10,8 +10,8 @@ import kotlinx.coroutines.flow.map
 class TvShowsRepository(
     private val apiClient: MovieDbApiClient
 ) : ITvShowsRepository {
-    override suspend fun getTopRatedTvShows(): Flow<TopRatedTvShows> {
-        return apiClient.getTopRatedTvShows().map { response ->
+    override suspend fun getTopRatedTvShows(page: Int): Flow<TopRatedTvShows> {
+        return apiClient.getTopRatedTvShows(page = page).map { response ->
             response.toTopRatedTvShows()
         }
     }

@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 class TvSwipeAdapter() :
     RecyclerView.Adapter<TvSwipeAdapter.ViewHolder>() {
 
-    var tvShows: List<TvShow> by basicDiffUtil(
-        emptyList(),
+    var tvShows: MutableList<TvShow> by basicDiffUtil(
+        mutableListOf(),
         areItemsTheSame = { old, new -> old.id == new.id }
     )
 

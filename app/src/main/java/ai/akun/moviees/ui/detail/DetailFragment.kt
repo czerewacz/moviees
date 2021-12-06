@@ -36,6 +36,9 @@ class DetailFragment : Fragment() {
 
         adapter = TvSimilarAdapter(::navigateToSwipe)
         binding.recycler.adapter = adapter
+        binding.icNavBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
         startObserving()
 
         updateDetailLayout(args.tvShow)
@@ -53,7 +56,7 @@ class DetailFragment : Fragment() {
         })
 
         viewModel.topRated.observe(viewLifecycleOwner, { topRated ->
-            adapter.tvShows = topRated.results
+            adapter.tvShows = topRated.results.toMutableList()
         })
 
         viewModel.error.observe(viewLifecycleOwner, { error ->

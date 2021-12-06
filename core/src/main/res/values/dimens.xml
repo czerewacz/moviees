@@ -11,10 +11,12 @@
     <dimen name="margin_100">100dp</dimen>
     <dimen name="margin_50">50dp</dimen>
     <dimen name="margin_180">180dp</dimen>
+    <dimen name="margin_300">300dp</dimen>
 
     <!-- Sizes -->
     <dimen name="dimen_20">20dp</dimen>
     <dimen name="dimen_24">24dp</dimen>
+    <dimen name="dimen_32">32dp</dimen>
     <dimen name="dimen_48">48dp</dimen>
     <dimen name="dimen_150">150dp</dimen>
     <dimen name="dimen_300">300dp</dimen>

@@ -16,7 +16,7 @@ class MovieDbApiClient(
     private val topRatedEndpoint: String,
     private val similarTvEndpoint: String
 ) {
-    fun getTopRatedTvShows(): Flow<TopRatedData> {
+    fun getTopRatedTvShows(page: Int): Flow<TopRatedData> {
         return flow<TopRatedData> {
             emit(httpClient.get(
                 scheme = "https",
@@ -25,6 +25,7 @@ class MovieDbApiClient(
                 path = topRatedEndpoint
             ) {
                 parameter("api_key", apiKey)
+                parameter("page", page)
             })
         }.flowOn(
             backgroundDispatcher
