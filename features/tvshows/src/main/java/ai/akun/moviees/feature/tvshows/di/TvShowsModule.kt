@@ -14,5 +14,5 @@ val tvShowsModule = module {
     factory { GetTopRatedUseCase(get()) }
     factory { GetSimilarTVUseCase(get()) }
     viewModel { TopRatedViewModel(get()) }
-    viewModel { DetailViewModel(get(), get()) }
+    viewModel { DetailViewModel(get()) }
 }

@@ -86,6 +86,12 @@ Protect APIKEY using native C++ (SDK Tools NDK and CMake) from tools like APKPur
 I would like to implement as update, AndroidX Pagination 3 to have a cleanear and more controlled pagination
 and also integrate the loader and the retry in the recyclerview
 
+## Similar TV Shows
+Improve network search based on multiples genre Id´s
+
+## DetailViewmodel
+Migrate Args to state viewmodel
+
 ## Considerations
 - Migrate to Jetpack Compose with Single Activity and zero fragments (If not, implement viewModel data binding to clean the UI Controller, in this project would be the MainActivity)
 - In case to scale the app with XML View use Single Activity with multiple fragments and manage navigation with Jetpack Navigation which is very powerful)

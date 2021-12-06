@@ -9,11 +9,8 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class DetailViewModel(
-    private val state: SavedStateHandle,
     private val getSimilarTVUseCase: GetSimilarTVUseCase
 ) : ViewModel() {
-
-    val data: LiveData<TvShow> = state.getLiveData<TvShow>("tvShow")
 
     private val _uiState = MutableLiveData<UIState>()
     val uiState: LiveData<UIState> = _uiState
