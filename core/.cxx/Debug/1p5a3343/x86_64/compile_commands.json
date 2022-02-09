@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/czerewacz/Documents/Marce/Projects/Android/Moviees/core/.cxx/Debug/1p5a3343/x86_64",
+  "command": "/Users/czerewacz/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=x86_64-none-linux-android26 --gcc-toolchain=/Users/czerewacz/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/czerewacz/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dapi_keys_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/api-keys.dir/src/main/cpp/api-keys.cpp.o -c /Users/czerewacz/Documents/Marce/Projects/Android/Moviees/core/src/main/cpp/api-keys.cpp",
+  "file": "/Users/czerewacz/Documents/Marce/Projects/Android/Moviees/core/src/main/cpp/api-keys.cpp"
+}
+]

@@ -1,0 +1,3 @@
+ninja: Entering directory `/Users/czerewacz/Documents/Marce/Projects/Android/Moviees/core/.cxx/Debug/1p5a3343/x86_64'
+[1/2] Building CXX object CMakeFiles/api-keys.dir/src/main/cpp/api-keys.cpp.o
+[2/2] Linking CXX shared library ../../../../build/intermediates/cxx/Debug/1p5a3343/obj/x86_64/libapi-keys.so

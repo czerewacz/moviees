@@ -1,0 +1,40 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/Users/czerewacz/Documents/Marce/Projects/Android/Moviees/core/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/czerewacz/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/Users/czerewacz/Documents/Marce/Projects/Android/Moviees/core/.cxx/Debug/1p5a3343/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/czerewacz/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/Users/czerewacz/Documents/Marce/Projects/Android/Moviees/core/.cxx/Debug/1p5a3343/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "api-keys-Debug-x86": {
+      "buildCommandComponents": [
+        "/Users/czerewacz/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/czerewacz/Documents/Marce/Projects/Android/Moviees/core/.cxx/Debug/1p5a3343/x86",
+        "api-keys"
+      ],
+      "buildType": "debug",
+      "abi": "x86",
+      "artifactName": "api-keys",
+      "output": "/Users/czerewacz/Documents/Marce/Projects/Android/Moviees/core/build/intermediates/cxx/Debug/1p5a3343/obj/x86/libapi-keys.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

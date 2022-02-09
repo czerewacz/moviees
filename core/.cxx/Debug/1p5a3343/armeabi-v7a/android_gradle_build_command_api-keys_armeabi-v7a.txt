@@ -1,0 +1,7 @@
+Executable : /Users/czerewacz/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/Users/czerewacz/Documents/Marce/Projects/Android/Moviees/core/.cxx/Debug/1p5a3343/armeabi-v7a
+api-keys
+jvmArgs : 
+
