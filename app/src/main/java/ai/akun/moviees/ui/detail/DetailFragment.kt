@@ -47,23 +47,19 @@ class DetailFragment : Fragment() {
 
     private fun startObserving() {
 
-        viewModel.uiState.observe(viewLifecycleOwner, { uiState ->
+        viewModel.uiState.observe(viewLifecycleOwner) { uiState ->
             updateSimilarLayout(uiState)
-        })
+        }
 
-        viewModel.tvShow.observe(viewLifecycleOwner, { tvShow ->
-            updateDetailLayout(tvShow)
-        })
+        viewModel.similarTvShows.observe(viewLifecycleOwner) { similarTvShows ->
+            adapter.tvShows = similarTvShows.results.toMutableList()
+        }
 
-        viewModel.topRated.observe(viewLifecycleOwner, { topRated ->
-            adapter.tvShows = topRated.results.toMutableList()
-        })
-
-        viewModel.error.observe(viewLifecycleOwner, { error ->
+        viewModel.error.observe(viewLifecycleOwner) { error ->
             if (error != "") {
                 binding.errorText.text = error
             }
-        })
+        }
     }
 
     private fun updateDetailLayout(tvShow: TvShow) = with(binding) {

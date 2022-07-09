@@ -4,7 +4,10 @@ import ai.akun.core.usecase.UseCaseResult
 import ai.akun.moviees.feature.tvshows.domain.model.TopRatedTvShows
 import ai.akun.moviees.feature.tvshows.domain.model.TvShow
 import ai.akun.moviees.feature.tvshows.domain.usecases.GetSimilarTVUseCase
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -18,8 +21,8 @@ class DetailViewModel(
     private val _tvShow = MutableLiveData<TvShow>()
     val tvShow: LiveData<TvShow> = _tvShow
 
-    private val _topRated = MutableLiveData<TopRatedTvShows>()
-    val topRated: LiveData<TopRatedTvShows> = _topRated
+    private val _similarTvShows = MutableLiveData<TopRatedTvShows>()
+    val similarTvShows: LiveData<TopRatedTvShows> = _similarTvShows
 
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
@@ -30,7 +33,7 @@ class DetailViewModel(
             getSimilarTVUseCase(genreId = genreId).collect { result ->
                 if (result is UseCaseResult.Success) {
                     _uiState.postValue(UIState.Success)
-                    _topRated.postValue(updateTvList(result.data))
+                    _similarTvShows.postValue(updateTvList(result.data))
                 } else if (result is UseCaseResult.Error) {
                     _uiState.postValue(UIState.Error)
                     _error.postValue(result.exception.message)
@@ -42,8 +45,6 @@ class DetailViewModel(
     fun setTvShow(tvShow: TvShow){
         _tvShow.postValue(tvShow)
     }
-
-
 
     private fun updateTvList(topRated: TopRatedTvShows): TopRatedTvShows {
         val list: MutableList<TvShow> = topRated.results.toMutableList()

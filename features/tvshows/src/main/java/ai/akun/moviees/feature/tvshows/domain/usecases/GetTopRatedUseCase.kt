@@ -1,20 +1,14 @@
 package ai.akun.moviees.feature.tvshows.domain.usecases
 
-import ai.akun.core.usecase.UseCaseResult
 import ai.akun.moviees.feature.tvshows.domain.ITvShowsRepository
-import ai.akun.moviees.feature.tvshows.domain.model.TopRatedTvShows
+import ai.akun.moviees.feature.tvshows.domain.model.TvShow
+import androidx.paging.PagingData
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.map
 
 class GetTopRatedUseCase(
     private val tvShowsRepository: ITvShowsRepository
 ) {
-    suspend operator fun invoke(page: Int): Flow<UseCaseResult<TopRatedTvShows>> {
-        return tvShowsRepository.getTopRatedTvShows(page = page).map { topRatedTvShows ->
-            UseCaseResult.Success(topRatedTvShows) as UseCaseResult<TopRatedTvShows>
-        }.catch { error ->
-            emit(UseCaseResult.Error(exception = error))
-        }
+    suspend operator fun invoke(): Flow<PagingData<TvShow>> {
+        return tvShowsRepository.getTopRatedTvShows()
     }
 }

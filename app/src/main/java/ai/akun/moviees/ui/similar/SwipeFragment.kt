@@ -31,7 +31,7 @@ class SwipeFragment : Fragment() {
     }
 
     private fun updateUI() {
-        adapter.tvShows = viewModel.topRated.value?.results?.toMutableList()!!
+        adapter.tvShows = viewModel.similarTvShows.value?.results?.toMutableList()!!
         binding.recycler.layoutManager?.scrollToPosition(args.position)
 
         binding.closeSwipe.setOnClickListener {

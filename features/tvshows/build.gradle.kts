@@ -56,5 +56,8 @@ dependencies {
     implementation(Dependencies.AndroidX.appcompat)
     implementation(Dependencies.Google.material)
 
+    //Paging
+    implementation(Dependencies.AndroidX.paging)
+
     addTestsDependencies()
 }

@@ -78,4 +78,7 @@ dependencies {
     implementation(Dependencies.Glide.glide)
     kapt(Dependencies.Glide.glideKapt)
 
+    //Paging
+    implementation(Dependencies.AndroidX.paging)
+
 }

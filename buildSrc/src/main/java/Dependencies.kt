@@ -39,6 +39,9 @@ object Dependencies {
         //Navigation ui
         const val navigationUI =
             "androidx.navigation:navigation-ui-ktx:${DependenciesVersions.navigation}"
+
+        //Paging 3
+        const val paging = "androidx.paging:paging-runtime:${DependenciesVersions.paging}"
     }
 
     object Kotlin {
