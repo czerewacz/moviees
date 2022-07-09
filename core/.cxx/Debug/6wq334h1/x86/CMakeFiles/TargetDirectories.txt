@@ -1,0 +1,3 @@
+/Users/czerewacz/Documents/Proyects/moviees/core/.cxx/Debug/6wq334h1/x86/CMakeFiles/rebuild_cache.dir
+/Users/czerewacz/Documents/Proyects/moviees/core/.cxx/Debug/6wq334h1/x86/CMakeFiles/edit_cache.dir
+/Users/czerewacz/Documents/Proyects/moviees/core/.cxx/Debug/6wq334h1/x86/CMakeFiles/api-keys.dir

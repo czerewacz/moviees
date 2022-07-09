@@ -79,6 +79,9 @@ viewModel Live Data that is observed in the UI Controller.
 
 ## NDK to hide APIKEYS
 Protect APIKEY using native C++ (SDK Tools NDK and CMake) from tools like APKPure and APKTool
+NOTE: For this project I am uploading to the repository CMAKE file and the file api-keys.cpp to
+be able to compile for demo purposes. This file should be uploaded to a CI/CD as you usually do
+with local.properties.
 
 #TODO´S
 
