@@ -83,11 +83,10 @@ NOTE: For this project I am uploading to the repository CMAKE file and the file 
 be able to compile for demo purposes. This file should be uploaded to a CI/CD as you usually do
 with local.properties.
 
-#TODO´S
+## Pagination 3
+Implemented Android Paging Library 3 to improve pagination reducing network usage and system resources.
 
-## Pagination
-I would like to implement as update, AndroidX Pagination 3 to have a cleanear and more controlled pagination
-and also integrate the loader and the retry in the recyclerview
+#TODO´S
 
 ## Similar TV Shows
 Improve network search based on multiples genre Id´s
