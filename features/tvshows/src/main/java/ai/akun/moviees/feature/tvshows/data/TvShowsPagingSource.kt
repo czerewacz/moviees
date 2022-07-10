@@ -16,7 +16,7 @@ class TvShowsPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, TvShow> {
         return try {
             val pageNumber = params.key ?: 1
-            Log.d("MOVIEE-LOG", "Page Number $pageNumber")
+
             val response = apiClient.getTopRatedTvShows(
                 page = pageNumber
             ).single()

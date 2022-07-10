@@ -23,7 +23,6 @@ class DetailFragment : Fragment() {
     private val args: DetailFragmentArgs by navArgs()
 
     private val viewModel: DetailViewModel by sharedViewModel()
-    //TODO pass args to ViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
